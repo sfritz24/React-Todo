@@ -3,7 +3,7 @@ import {v4 as uuid} from 'uuid';
 import TodoForm from './components/TodoForm';
 import TodoList from './components/TodoList';
 
-const todoList = [
+const todo = [
   {
     task: 'Organize Garage',
     id: uuid(),
@@ -24,7 +24,7 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      todoList: todoList
+      todo: todo
     };
   };
 
@@ -35,13 +35,13 @@ class App extends React.Component {
       completed: false,
     }
     this.setState({
-      todoList: [...this.state.todoList, newItem]
+      todo: [...this.state.todo, newItem]
     })
   }
 
   toggleItem = itemId =>{
     this.setState({
-      todoList: this.state.todoList.map(item =>{
+      todo: this.state.todo.map(item =>{
         if (item.id === itemId) {
           return{
             ...item,
@@ -61,7 +61,7 @@ class App extends React.Component {
           <h1>Honey Do List</h1>
           <TodoForm addItem={this.addItem}/>
         </div>
-        <TodoList toggleItem={this.toggleItem} todo={this.state.todoList}/>
+        <TodoList toggleItem={this.toggleItem} todo={this.state.todo}/>
       </div>
     );
   }

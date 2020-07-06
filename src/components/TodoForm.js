@@ -15,7 +15,7 @@ class ListForm extends React.Component {
     };
 
     handleSubmit = event =>{
-        event.preventdefault();
+        event.preventDefault();
         this.props.addItem(this.state.item);
         this.setState({
             item: ''
