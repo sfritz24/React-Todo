@@ -2,19 +2,9 @@ import React from 'react';
 import {v4 as uuid} from 'uuid';
 import TodoForm from './components/TodoForm';
 import TodoList from './components/TodoList';
+import './components/Todo.css';
 
-const todo = [
-  {
-    task: 'Organize Garage',
-    id: uuid(),
-    completed: false
-  },
-  {
-    task: 'Bake Cookies',
-    id: uuid(),
-    completed: false
-  }
-]
+const todo = []
 
 class App extends React.Component {
   // you will need a place to store your state in this component.
